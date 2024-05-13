@@ -1,6 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
-import { HomeIcon, SearchIcon } from 'lucide-react'
+import {
+  Briefcase,
+  HomeIcon,
+  MessagesSquare,
+  SearchIcon,
+  UserIcon
+} from 'lucide-react'
 import Link from 'next/link'
 function Header() {
   return (
@@ -22,9 +28,22 @@ function Header() {
           />
         </form>
       </div>
-      <div>
+      <div className="flex items-center space-x-4 px-6">
         <Link href="/" className="icon">
-          <HomeIcon className="h-5 text-gray-600" />
+          <HomeIcon className="h-5" />
+          <p>Home</p>
+        </Link>
+        <Link href="/" className="icon hidden md:flex">
+          <UserIcon className="h-5" />
+          <p>Network</p>
+        </Link>
+        <Link href="/" className="icon hidden md:flex">
+          <Briefcase className="h-5" />
+          <p>Jobs</p>
+        </Link>
+        <Link href="/" className="icon hidden md:flex">
+          <MessagesSquare className="h-5 " />
+          <p>Messaging</p>
         </Link>
       </div>
     </div>
