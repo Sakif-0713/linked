@@ -8,6 +8,8 @@ import {
   UserIcon
 } from 'lucide-react'
 import Link from 'next/link'
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
+import { Button } from './ui/button'
 function Header() {
   return (
     <div className="flex items-center p-2 max-w-6xl mx-auto">
@@ -45,6 +47,14 @@ function Header() {
           <MessagesSquare className="h-5 " />
           <p>Messaging</p>
         </Link>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        <SignedOut>
+          <Button asChild variant={'secondary'}>
+            <SignInButton />
+          </Button>
+        </SignedOut>
       </div>
     </div>
   )
